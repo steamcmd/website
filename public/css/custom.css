@@ -1,0 +1,264 @@
+/* -- general -- */
+
+* {
+  color: #636366;
+}
+body {
+  background: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid currentColor;
+}
+
+a:hover {
+  color: #000;
+  border-bottom: 1px solid currentColor;
+}
+b {
+  font-weight: bold;
+}
+
+.m-bottom {
+  margin-bottom: 48px;
+}
+
+.container {
+  padding-top: 100px;
+}
+
+.body-content {
+  background: #f4f4f4;
+  padding: 100px 0 120px 0;
+  position: relative;
+  z-index: 0 !important;
+}
+
+.body-content > .container {
+  position: relative;
+  top: 100px;
+  padding-bottom: 100px;
+}
+.jumbotron {
+  height: 760px;
+}
+.jumbotron, .menu {
+  background: #1C1C1C;
+  width: 100%;
+  z-index: 100 !important;
+}
+.menu .container {
+  padding-top: 10px;
+}
+
+.jumbotron h1,
+.jumbotron h2 {
+  color: #fff;
+}
+
+button {
+  height: 48px;
+  width: 180px;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+button:hover {
+  background: #FFF;
+  color: #1C1C1C;
+  text-decoration: none;
+  border-bottom: none;
+}
+button:hover .icon {
+  stroke: #1C1C1C;
+  vertical-align: middle;
+}
+button:active {
+  outline: none;
+}
+button .icon {
+  margin-right: 5px;
+  stroke: #FFF;
+  vertical-align: middle;
+}
+
+.a-btn, .a-btn:hover {
+  border-bottom: none;
+}
+.a-btn-alt:hover {
+  color: #aaa;
+}
+.btn-secondary {
+  border: 1px solid #1C1C1C;
+  color: #1C1C1C;
+}
+.btn-secondary:hover {
+  background: #1C1C1C;
+  color: #fff;
+}
+.line {
+  height: 1px;
+  width: 100%;
+  background: #D6D6D8;
+  margin: 40px 0;
+}
+
+/* -- syntax highlight -- */
+
+code, code i, code b {
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 500;
+  margin:0;
+  padding:0;
+}
+.syntax-string  { color: #75C050; }
+.syntax-number  { color: #F9B42D; }
+.syntax-boolean { color: blue; }
+.syntax-comment,
+.syntax-null    { color: #B6CAD2; }
+.syntax-key     { color: #FE7880; }
+
+/* -- footer -- */
+
+footer {
+  background: #1C1C1C;
+  padding-bottom: 80px;
+}
+footer p {
+  color: #fff;
+}
+
+/* -- main --- */
+
+.api-mock {
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #D8DCE6;
+  margin-top: 165px;
+  z-index: 200 !important;
+}
+.api-mock .line {
+  margin: 0;
+}
+.api-mock-cmd, .api-mock-out {
+  padding: 8px 20px;
+}
+.api-mock-cmd {
+  padding: 24px 25px 16px;
+  overflow: auto;
+}
+.api-mock-cmd .a-btn {
+  float: right;
+  color: #000;
+  cursor: pointer;
+}
+.api-mock-cmd code, .api-mock-out code {
+  margin: 0;
+}
+.grid-display [class^="col"].block {
+  background: #FFF;
+  border: 1px solid #D8DCE6;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.grid-display [class^="col"].mock-out, .api-mock-out {
+  background: #efefef;
+  overflow: scroll;
+}
+.grid-display [class^="col"].mock-out pre {
+  margin:0;
+}
+pre.code-example {
+  margin-top: 30px;
+  overflow: auto;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #D8DCE6;
+  padding: 24px 0;
+}
+
+/* -- table -- */
+
+table {
+  width: 100%;
+  border: 1px solid #D8DCE6;
+  border-radius: 4px;
+}
+tr {
+
+}
+th, td {
+  padding: 5px 10px;
+}
+th {
+  font-weight: normal;
+  background: #EFEFEF;
+}
+td {
+  background: #FFF;
+}
+
+/* -- icons -- */
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.icon:hover {
+  stroke: #000;
+}
+
+/* -- loading -- */
+
+.loader {
+  margin: 20px 0px;
+  height: 6px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #ddd;
+}
+.loader:before{
+  display: block;
+  position: absolute;
+  content: "";
+  left: -200px;
+  width: 200px;
+  height: 6px;
+  background-color: #1C1C1C;
+  animation: loading 2s linear infinite;
+}
+@keyframes loading {
+    from { left: -200px; width: 30%; }
+    50% { width: 30%; }
+    70% { width: 70%; }
+    80% { left: 50%; }
+    95% { left: 120%; }
+    to { left: 100%; }
+}
+
+/* -- media queries -- */
+
+@media only screen and (min-width: 720px) {
+  .jumbotron {
+    height: 600px;
+  }
+}

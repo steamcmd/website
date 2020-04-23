@@ -1,0 +1,58 @@
+{{ partial "header.html" . }}
+
+<div class="body-content">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-4 center">
+        <div class="img img-responsive center"></div>
+        <h4>Free</h4>
+        <p>
+          The service is currently made available for free and will remain so as long as possible.
+        </p>
+      </div>
+      <div class="col-4 center">
+        <div class="img img-lightweight center"></div>
+        <h4>Public</h4>
+        <p>
+          No authentication or verification is required to lower the bar of using the API.
+        </p>
+      </div>
+      <div class="col-4 center">
+        <div class="img img-simple center"></div>
+        <h4>Questions</h4>
+        <p>
+          For more information check the <a href="#docs">docs</a> below and the <a href="#faq">faq</a> further down this page.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 hidden-sm"></div>
+      <div class="col-4">
+        <div class="line"></div>
+      </div>
+      <div class="col-4 hidden-sm"></div>
+    </div>
+
+    {{ partial "docs.html" . }}
+
+    <div class="row">
+      <div class="col-4 hidden-sm"></div>
+      <div class="col-4">
+        <div class="line"></div>
+      </div>
+      <div class="col-4 hidden-sm"></div>
+    </div>
+
+    {{ partial "faq.html" . }}
+
+  </div>
+</div>
+
+{{ partial "footer.html" . }}
+
+{{ partial "script.html" . }}
+
+</body>
+</html>

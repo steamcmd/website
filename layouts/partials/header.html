@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>SteamCMD API</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png"    href="/favicon.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet"    type="text/css"     href="/css/simple-grid.css" />
+  <link rel="stylesheet"    type="text/css"     href="/css/custom.css" />
+  <!-- javascript -->
+  <script src="{{ .Site.Params.vueUrl }}"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 center">
+        <h1>SteamCMD API</h1>
+        <h2 class="font-light">Free and programmable way to retrieve steamcmd app information</h2>
+        <a class="a-btn" href="#docs">
+          <button>Docs</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div id="api-mock" class="api-mock">
+          <div class="api-mock-cmd">
+            <code style="float:left;"><i class="syntax-key">curl</i> <i class="syntax-number">-X</i> <i class="syntax-string">GET</i> <i class="syntax-comment">'https://api.steamcmd.net/v1/info/740'</i></code>
+            <a class="a-btn" v-on:click="apicmd">
+              <svg class="icon">
+                <use xlink:href="/img/icon-sprite.svg#play-circle"/>
+              </svg>
+            </a>
+            <a class="a-btn" style="margin-right:15px;" v-on:click="apicopy">
+              <svg class="icon">
+                <use xlink:href="/img/icon-sprite.svg#clipboard"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="api-mock-out">
+            <div v-if="errored">
+              <pre>Something went wrong while connecting to the API. Please check the <a style="color:#000" href="https://status.steamcmd.net">status page</a> or <a style="color:#000" href="https://twitter.com/steamcmd">Twitter</a> for more information</pre>
+            </div>
+            <div v-else-if="loading">
+              <div class="loader"></div>
+            </div>
+            <div v-else>
+              <pre><code class="" v-html="api_info"></code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
