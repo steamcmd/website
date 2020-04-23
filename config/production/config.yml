@@ -1,0 +1,9 @@
+# global
+baseURL: 'https://www.steamcmd.net/'
+languageCode: en-us
+title: un-Offical SteamCMD API
+
+# env specific
+params:
+  apiUrl: 'https://api.steamcmd.net/v1/info/740'
+  vueUrl: 'https://cdn.jsdelivr.net/npm/vue'

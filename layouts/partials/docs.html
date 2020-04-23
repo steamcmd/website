@@ -1,0 +1,208 @@
+  <div id="docs" class="row">
+    <div class="col-12">
+      <h2 class="center m-bottom">Docs</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 center">
+      <div class="img img-responsive center"></div>
+      <h4>Versioning</h4>
+      <p>
+        The API is versioned for compatibility reasons, but only <u>/v1/</u> is currently available.
+      </p>
+    </div>
+    <div class="col-6 center">
+      <div class="img img-lightweight center"></div>
+      <h4>Authentication</h4>
+      <p>
+        No authentication or verification is required to use the API. Currently no (tight) rate limiting
+        or throttling is implemented. However, caching will be added in the future to avoid unnecessary
+        requests to Valve servers.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid-display">
+    <div class="row">
+      <div class="col-12">
+        <h4>Get Info for an App</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 block">
+        <code><b class="syntax-string">GET</b> &nbsp;<b>https://api.steamcmd.net/v1/info/</b><b class="syntax-comment">:id</b></code>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <b>Query Parameters</b>
+      </div>
+      <div class="col-12 left">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>pretty</td>
+            <td>boolean (0/1)</td>
+            <td>optional</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <b>Response Example</b> &nbsp;<b class="syntax-string">200</b>
+      </div>
+      <div class="col-12 block mock-out">
+        <pre><code>{
+    "data": {
+        "740": {
+            "common": {
+                "community_visible_stats": "1",
+                "gameid": "740",
+                "name": "Counter-Strike Global Offensive - Dedicated Server",
+                "oslist": "windows,linux",
+                "type": "Tool"
+            },
+            "config": {
+                "contenttype": "3",
+                "installdir": "Counter-Strike Global Offensive Beta - Dedicated Server",
+                "launch": {
+                    "0": {
+                        "executable": "testapp.exe"
+                    }
+                }
+            },
+            "depots": {
+                "731": {
+                    "encryptedmanifests": {
+                        "dprs": {
+                            "encrypted_gid_2": "D0727220F3483AC9614CDB4775997F02",
+                            "encrypted_size_2": "2C93C023E44BDCC57F20BE5959033C34"
+                        }
+                    },
+                    "manifests": {
+                        "1.37.0.1": "2133661318916785095",
+                        "public": "5274482059493938721"
+                    },
+                    "maxsize": "19195340072",
+                    "name": "Counter-Strike Global Offensive Beta Common",
+                    "systemdefined": "1"
+                },
+                "740": {
+                    "encryptedmanifests": {
+                        "dprs": {
+                            "encrypted_gid_2": "265245B816988510BFD1FD575DA2CEB8",
+                            "encrypted_size_2": "6D20BEC0DB9432A5FB8C1E3447BEBBF8"
+                        }
+                    },
+                    "manifests": {
+                        "1.37.0.1": "992309860486948495",
+                        "public": "8596693408921672263"
+                    },
+                    "maxsize": "1448766796",
+                    "name": "Counter-Strike Global Offensive Beta - Dedicated Server",
+                    "systemdefined": "1"
+                },
+                "branches": {
+                    "1.37.0.1": {
+                        "buildid": "3909351",
+                        "description": "",
+                        "timeupdated": "1560802283"
+                    },
+                    "dprs": {
+                        "buildid": "2479775",
+                        "description": "",
+                        "pwdrequired": "1",
+                        "timeupdated": "1517267346"
+                    },
+                    "public": {
+                        "buildid": "3936003",
+                        "timeupdated": "1560990358"
+                    }
+                },
+                "overridescddb": "1"
+            },
+            "extended": {
+                "developer": "",
+                "gamedir": "Counter-Strike Global Offensive Beta Dedicated Server",
+                "homepage": "",
+                "icon": "",
+                "noservers": "0",
+                "primarycache": "740",
+                "sourcegame": "1",
+                "state": "eStateTool",
+                "visibleonlywheninstalled": "1",
+                "visibleonlywhensubscribed": "1"
+            }
+        }
+    },
+    "status": "success"
+}</code></pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <b>Response Example</b> &nbsp;<b class="syntax-key">404</b>
+      </div>
+      <div class="col-12 block mock-out">
+        <pre><code>{
+    "data": "No information for this specific app id could be found on Steam",
+    "status": "error"
+}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-display">
+    <div class="row">
+      <div class="col-12">
+        <h4>Get Version of the API</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 block">
+        <code><b class="syntax-string">GET</b> &nbsp;<b>https://api.steamcmd.net/v1/version</b></code>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <b>Query Parameters</b>
+      </div>
+      <div class="col-12 left">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>pretty</td>
+            <td>boolean (0/1)</td>
+            <td>optional</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <b>Response Example</b> &nbsp;<b class="syntax-string">200</b>
+      </div>
+      <div class="col-12 block mock-out">
+        <pre><code>{
+    "data": {
+        "build": null,
+        "major": 1,
+        "minor": 0,
+        "patch": 0,
+        "prerelease": null
+    },
+    "status": "success"
+  }</code></pre>
+      </div>
+    </div>
+  </div>

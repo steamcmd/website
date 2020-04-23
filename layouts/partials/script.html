@@ -1,0 +1,67 @@
+<script>
+var apimock = new Vue({
+
+  el: '#api-mock',
+  delimiters: ['[[', ']]'],
+  data () {
+    return {
+      api_info: '',
+      loading: false,
+      errored: false
+    }
+  },
+
+  methods: {
+    // execute api call
+    apicmd: function (event) {
+      this.loading = true
+      axios
+        .get('{{ .Site.Params.apiUrl }}')
+        .then(response => {
+          // convert string to json
+          var api_json = JSON.stringify(response.data.data, null, 2)
+          // pretty print json
+          this.api_info = this.highlight(api_json)
+        })
+        .catch(error => {
+          // print error to console
+          console.log(error)
+          // show error message in browser
+          this.errored = true
+        })
+        .finally(() => this.loading = false)
+    },
+    // copy curl to clipboard
+    apicopy: function (event) {
+      var tempInput = document.createElement('input');
+      tempInput.style = 'position: absolute; left: -1000px; top: -1000px';
+      tempInput.value = 'curl -X GET \'https://api.steamcmd.net/v1/info/740\'';
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+    },
+    // format syntax highlight
+    highlight: function (json) {
+      json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        var cls = 'syntax-number ';
+        if (/^"/.test(match)) {
+          if (/:$/.test(match)) {
+            cls = 'syntax-key';
+          } else {
+            cls = 'syntax-string';
+          }
+        } else if (/true|false/.test(match)) {
+          cls = 'syntax-boolean';
+        } else if (/null/.test(match)) {
+          cls = 'syntax-null';
+        }
+        return '<i class="' + cls + '">' + match + '</i>';
+      });
+    }
+
+  }
+
+});
+</script>
