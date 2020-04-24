@@ -1,13 +1,15 @@
-version: '3'
+version: "3"
 services:
   web:
-    image: "jguyomard/hugo-builder:latest"
-    ports:
-      - "1313:1313"
+    image: "jekyll/jekyll:pages"
     volumes:
-      - ./:/src
-    user: hugo
-    command: hugo serve -D --bind="0.0.0.0"
+      - ./:/srv/jekyll
+    command: jekyll serve --config _config-dev.yml --host 0.0.0.0
+    #command: "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
+    #command: mkdir -p /usr/gem/cache && bundle update
+    #command: gem install minitest -v '5.14.0' --source 'https://rubygems.org/'
+    environment:
+      VERBOSE: "1"
   cors:
     image: "imjacobclark/cors-container:latest"
     ports:
