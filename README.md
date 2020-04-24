@@ -1,39 +1,33 @@
-[![service status](https://img.shields.io/static/v1?label=service&message=status&color=blue)](https://status.steamcmd.net)
+[![Service Status](https://img.shields.io/static/v1?label=service&message=status&color=blue)](https://status.steamcmd.net)
 [![StackShare](http://img.shields.io/badge/tech-stack-blue.svg?style=flat)](https://stackshare.io/jona/steamcmd-web)
 
 # SteamCMD Web
 
-Statically generated website and docs for the SteamCMD API based on [Hugo](https://gohugo.io/)
+Statically generated website and docs for the SteamCMD API build with [Jekyll](https://jekyllrb.com).
 
-### Configuration
+## Development
 
-Two different configs are used. One for development and one during production. You can find them in the config directory:
-```
-config/
-  development/
-    config.toml
-  production/
-    config.toml
-```
-When the local Hugo webserver is used during development (with the `serve` command), the `development` config is automatically used.
-Otherwise when a full build is done via Hugo, the `production` config is automatically used.
+For local development you can use Jekyll on the command line and run the build-in development server locally. The easiest way however is using Docker Compose. This is a quick way to spin up the Jekyll development environment and a CORS container to fix CORS issues with client-side API calls.
 
-### Development Docker
+### Docker Method
 
-The easier way to setup a local development environment for testing changes is using Docker Compose.
-You can spin up the Hugo Builder container and CORS container with the `docker-compose` command:
+You will only need to have Docker installed. Run the Docker Compose command to start the containers:
 ```
 docker-compose up
 ```
 After executing this command you should be able to reach the URL on [http://localhost:1313/](http://localhost:1313/).
 
-### Development Manual
+### Manual Method
 
-As an alternative for using Docker Compose you can spin up a local webserver and generate on-the-fly with the following Hugo command.
-By default the webserver is only reachable on localhost (127.0.0.1) and you will need to add the bind parameter to make it reachable.
+Install [Jekyll](https://jekyllrb.com) and it's prerequisites if you don't have them installed yet:
 ```
-hugo serve -D
-hugo serve -D --bind="0.0.0.0"
+gem install bundler jekyll github-pages
+bundle install
+```
+By default the build-in webserver is only reachable on localhost (127.0.0.1) and you will need to add the bind parameter to make it reachable.
+```
+bundle exec jekyll serve --config _config-dev.yml
+bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0
 ```
 To avoid CORS error with the API's used in Javascript you can use a/the Local CORS Proxy. Install this with:
 ```
@@ -44,3 +38,12 @@ And run it locally with:
 lcp --proxyUrl https://api.steamcmd.net --port 3000
 lcp --proxyUrl https://api.steampowered.com --port 3001
 ```
+
+## Configuration
+
+Two different configs are used. One for development and one for the production build. You can find them in the root directory:
+```
+_config.yml
+_config-dev.yml
+```
+By default the `_config.yml` config is used. During development it's recommend to specify the development `_config-dev.yml` config. The Docker Compose file specifies the development config as well.

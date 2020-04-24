@@ -1,0 +1,13 @@
+# global
+url: https://www.steamcmd.net
+title: SteamCMD API
+
+# env specific
+api_url: http://localhost:3000/https://api.steamcmd.net/v1/info/740
+vue_url: https://vuejs.org/js/vue.js
+
+# build
+sass:
+  style: compressed
+
+exclude: [".scss", "README.md", "docker-compose.yml" ,"node_modules", "gruntfile.js", "package.json", "Gemfile", "Gemfile.lock", "LICENSE"]
