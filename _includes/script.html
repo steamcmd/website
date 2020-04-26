@@ -16,7 +16,7 @@ var apimock = new Vue({
     apicmd: function (event) {
       this.loading = true
       axios
-        .get('{{ .Site.Params.apiUrl }}')
+        .get('{{ .site.api_url }}')
         .then(response => {
           // convert string to json
           var api_json = JSON.stringify(response.data.data, null, 2)

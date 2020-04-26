@@ -1,15 +1,12 @@
 version: "3"
 services:
   web:
-    image: "jekyll/jekyll:pages"
+    image: "jekyll/jekyll:3.8.5"
     volumes:
       - ./:/srv/jekyll
     command: jekyll serve --config _config-dev.yml --host 0.0.0.0
-    #command: "bundle exec jekyll serve --config _config-dev.yml --host 0.0.0.0"
-    #command: mkdir -p /usr/gem/cache && bundle update
-    #command: gem install minitest -v '5.14.0' --source 'https://rubygems.org/'
-    environment:
-      VERBOSE: "1"
+    ports:
+      - "4000:4000"
   cors:
     image: "imjacobclark/cors-container:latest"
     ports:
