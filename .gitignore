@@ -1,6 +1,10 @@
+# ignore OS related files
+.DS_Store
+
 # ignore tmp / cache dirs
 tmp
 .sass-cache
+
 
 # ignore static build output
 _site
