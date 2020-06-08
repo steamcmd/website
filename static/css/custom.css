@@ -31,7 +31,7 @@ b {
 
 .body-content {
   background: #f4f4f4;
-  padding: 100px 0 120px 0;
+  padding: 100px 0 120px;
   position: relative;
   z-index: 0;
 }
@@ -198,9 +198,6 @@ table {
   border: 1px solid #D8DCE6;
   border-radius: 4px;
 }
-tr {
-
-}
 th, td {
   padding: 5px 10px;
 }
@@ -229,7 +226,7 @@ td {
 /* -- loading -- */
 
 .loader {
-  margin: 20px 0px;
+  margin: 20px 0;
   height: 6px;
   width: 100%;
   position: relative;

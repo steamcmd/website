@@ -1,4 +1,4 @@
-[![Codacy Grade](https://img.shields.io/codacy/grade/98ef2c5486f34c67b896d7ee27b34ccf.svg?logo=codacy)](https://www.codacy.com/gh/steamcmd/website)
+[![CodeFactor](https://www.codefactor.io/repository/github/steamcmd/website/badge/master)](https://www.codefactor.io/repository/github/steamcmd/website/overview/master)
 [![Service Status](https://img.shields.io/static/v1?label=service&message=status&color=blue)](https://status.steamcmd.net/782831276)
 [![StackShare](http://img.shields.io/badge/tech-stack-blue.svg?style=flat)](https://stackshare.io/jona/steamcmd-web)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
