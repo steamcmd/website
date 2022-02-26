@@ -4,7 +4,7 @@ title: SteamCMD API
 
 # env specific
 api_url: http://localhost:3000/https://api.steamcmd.net/v1/info/740
-vue_url: https://vuejs.org/js/vue.js
+vue_url: http://localhost:3000/https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js
 
 # build
 sass:
