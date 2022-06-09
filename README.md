@@ -1,5 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/steamcmd/website/badge/master)](https://www.codefactor.io/repository/github/steamcmd/website/overview/master)
-[![Analytics](https://img.shields.io/badge/analytics-counter-purple.svg?style=flat)](https://analytics.steamcmd.net/)
+[![Discord Online](https://img.shields.io/discord/928592378711912488.svg)](https://discord.steamcmd.net)
 [![Service Status](https://img.shields.io/static/v1?label=service&message=status&color=blue)](https://status.steamcmd.net/782831276)
 [![StackShare](http://img.shields.io/badge/tech-stack-blue.svg?style=flat)](https://stackshare.io/steamcmd/website)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
