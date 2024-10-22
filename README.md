@@ -1,5 +1,6 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/steamcmd/website/badge/master)](https://www.codefactor.io/repository/github/steamcmd/website/overview/master)
 [![Discord Online](https://img.shields.io/discord/928592378711912488.svg)](https://discord.steamcmd.net)
+[![Mastodon Follow](https://img.shields.io/mastodon/follow/109302774947550572?domain=https%3A%2F%2Ffosstodon.org&style=flat)](https://fosstodon.org/@steamcmd)
 [![Service Status](https://img.shields.io/static/v1?label=service&message=status&color=blue)](https://status.steamcmd.net/782831276)
 [![StackShare](http://img.shields.io/badge/tech-stack-blue.svg?style=flat)](https://stackshare.io/steamcmd/website)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/steamcmd)](https://github.com/sponsors/steamcmd)
