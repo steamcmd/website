@@ -5,6 +5,10 @@
 }
 body {
   background: #f5f5f5;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 a {
