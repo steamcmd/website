@@ -23,7 +23,7 @@ body {
 /* ROOT FONT STYLES */
 
 * {
-  font-family: 'Lato', Helvetica, sans-serif;
+  /* font-family: 'Lato', Helvetica, sans-serif; */
   color: #333447;
   line-height: 1.5;
 }
