@@ -1,16 +1,7 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
-# Github related gems
-gem "github-pages", group: :jekyll_plugins
+# gem "rails"
 
-# Jekyll plugins
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-end
-
-# Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
-# and associated library.
-install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
-  gem "tzinfo", "~> 1.2"
-  gem "tzinfo-data"
-end
+gem "jekyll", "~> 4.4"
